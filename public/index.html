@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="CV - Andrei-Eduard Crăciun - Student & Software Developer" />
+    <meta name="keywords" content="CV, Resume, Andrei-Eduard Crăciun, Software Developer, Student, POLITEHNICA București" />
+    <meta name="author" content="Andrei-Eduard Crăciun" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://andrei-cv.netlify.app/" />
+    <meta property="og:title" content="CV - Andrei-Eduard Crăciun - Student & Software Developer" />
+    <meta property="og:description" content="Student & Software Developer la Universitatea POLITEHNICA București" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="CV - Andrei-Eduard Crăciun - Student & Software Developer" />
+    <meta property="twitter:description" content="Student & Software Developer la Universitatea POLITEHNICA București" />
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <title>CV - Andrei-Eduard Crăciun</title>
+    
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+        border-radius: 10px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #2563eb, #7c3aed);
+      }
+      
+      /* Loading animation */
+      .loading {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(59, 130, 246, 0.3);
+        border-radius: 50%;
+        border-top-color: #3b82f6;
+        animation: spin 1s ease-in-out infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Custom animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .animate-fadeInUp {
+        animation: fadeInUp 0.6s ease-out;
+      }
+      
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      /* Glass morphism effect */
+      .glass {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>Ai nevoie de JavaScript pentru a vizualiza acest CV interactiv.</noscript>
+    <div id="root"></div>
+    
+    <!-- Loading indicator -->
+    <div id="loading" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999;">
+      <div class="loading"></div>
+    </div>
+    
+    <script>
+      function typeTitle() {
+  const titles = [
+    'CV - Andrei-Eduard Crăciun',
+    'Student & Developer',
+    'POLITEHNICA București',
+    'Software Engineer'
+  ];
+  
+  let titleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typeSpeed = 100;
+  const deleteSpeed = 50;
+  const pauseTime = 2000;
+  
+  function type() {
+    const currentTitle = titles[titleIndex];
+    
+    if (isDeleting) {
+      document.title = currentTitle.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      document.title = currentTitle.substring(0, charIndex + 1);
+      charIndex++;
+    }
+    
+    let typeSpeedCurrent = isDeleting ? deleteSpeed : typeSpeed;
+    
+    if (!isDeleting && charIndex === currentTitle.length) {
+      typeSpeedCurrent = pauseTime;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      titleIndex = (titleIndex + 1) % titles.length;
+    }
+    
+    setTimeout(type, typeSpeedCurrent);
+  }
+  
+  // Start typing effect after 1 second
+  setTimeout(type, 1000);
+}
+
+// Initialize typing effect
+typeTitle();
+
+
+
+      // Hide loading indicator when page loads
+      window.addEventListener('load', function() {
+        const loading = document.getElementById('loading');
+        if (loading) {
+          loading.style.display = 'none';
+        }
+      });
+      
+      // Add smooth scrolling behavior
+      document.addEventListener('DOMContentLoaded', function() {
+        // Add any additional JavaScript functionality here
+        console.log('CV Interactiv - Andrei-Eduard Crăciun loaded successfully!');
+      });
+    </script>
+  </body>
+</html>
