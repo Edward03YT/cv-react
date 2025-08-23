@@ -176,7 +176,7 @@ Andrei-Eduard Crăciun
 
 📧 Email: igame0303@gmail.com
 💼 LinkedIn: Andrei-Eduard Crăciun
-🌐 Website: https://andrei-cv.netlify.app
+🌐 Website: https://cv-two-beta-11.vercel.app/
 
 🎯 Roadmap
 
