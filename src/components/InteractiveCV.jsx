@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useIntersectionObserver, useScrollProgress } from '../hooks/useIntersectionObserver';
 import { smoothScrollTo, animateProgressBar } from '../utils/animations';
 
-import { 
-  Mail, 
-  Linkedin, 
-  Code, 
-  GraduationCap, 
-  Award, 
-  Globe, 
+import {
+  Mail,
+  Linkedin,
+  Code,
+  GraduationCap,
+  Award,
+  Globe,
   Car,
   Monitor,
   Database,
@@ -28,9 +28,9 @@ export default function InteractiveCV() {
   const [activeSection, setActiveSection] = useState('about');
   const [isVisible, setIsVisible] = useState(false);
   const [typedText, setTypedText] = useState('');
-  
+
   const fullText = "Student la Universitatea POLITEHNICA București";
-  
+
   useEffect(() => {
     setIsVisible(true);
     let i = 0;
@@ -45,22 +45,22 @@ export default function InteractiveCV() {
   }, []);
 
   const certificates = [
-    { name: "Introducere în securitatea cibernetică", date: "19/03/2023", category: "Security", link: "https://drive.google.com/file/d/13Oags6UOb-3ccd3Xv40LJPEd9g1y9Cxf/view"  },
-    { name: "NDG LINUX ESSENTIALS", date: "09/07/2023", category: "Linux", link: "https://drive.google.com/file/d/1Fp8tJNlkJi6ZI1MS5409XMy10JDMBg51/view"  },
-    { name: "JavaScript Essentials 1", date: "24/06/2023", category: "Web", link: "https://drive.google.com/file/d/1ha4ZO4A0TMWI0nCJs8SOaW8Hn-MiS7IX/view"  },
-    { name: "Introduction to HTML", date: "22/06/2023", category: "Web", link: "https://drive.google.com/file/d/1TACJsHxL8x2JW5MUzHaWsLfYXDA-IVwB/view"  },
-    { name: "CPA: Programming Essentials in C++", date: "07/03/2023", category: "Programming", link: "https://drive.google.com/file/d/1PauK522jBcEBjAtBfmLGKXuyJ_8ebqjm/view"  },
-    { name: "Sololearn Certificate C#", date: "08/09/2022", category: "Programming", link: "https://drive.google.com/file/d/1E8myv6taPy0qdrkmwAqDtoqApL8e8eDf/view"  },
-    { name: "Sololearn Certificate C++", date: "07/09/2022", category: "Programming", link: "https://drive.google.com/file/d/1SoK8SwAnAVb20caWM2efKVnHLQkpmg7Y/view"  },
-    { name: "Sololearn Certificate Python", date: "09/09/2022", category: "Programming", link: "https://drive.google.com/file/d/1kMis9CaiYv6yGn4pNgI9T1LzRts_4Rlz/view"  },
-    { name: "Sololearn Certificate SQL", date: "09/09/2022", category: "Database", link: "https://drive.google.com/file/d/14QWA8u7xCuVnForRp4jx8bvzo2Ay1xYB/view"  },
-    { name: "Get Connected", date: "09/07/2023", category: "Networking", link: "https://drive.google.com/file/d/1AsECt0FyHv4uIUhL1i_Bz27r-nvbY1f4/view"  }
-];
+    { name: "Introducere în securitatea cibernetică", date: "19/03/2023", category: "Security", link: "https://drive.google.com/file/d/13Oags6UOb-3ccd3Xv40LJPEd9g1y9Cxf/view" },
+    { name: "NDG LINUX ESSENTIALS", date: "09/07/2023", category: "Linux", link: "https://drive.google.com/file/d/1Fp8tJNlkJi6ZI1MS5409XMy10JDMBg51/view" },
+    { name: "JavaScript Essentials 1", date: "24/06/2023", category: "Web", link: "https://drive.google.com/file/d/1ha4ZO4A0TMWI0nCJs8SOaW8Hn-MiS7IX/view" },
+    { name: "Introduction to HTML", date: "22/06/2023", category: "Web", link: "https://drive.google.com/file/d/1TACJsHxL8x2JW5MUzHaWsLfYXDA-IVwB/view" },
+    { name: "CPA: Programming Essentials in C++", date: "07/03/2023", category: "Programming", link: "https://drive.google.com/file/d/1PauK522jBcEBjAtBfmLGKXuyJ_8ebqjm/view" },
+    { name: "Sololearn Certificate C#", date: "08/09/2022", category: "Programming", link: "https://drive.google.com/file/d/1E8myv6taPy0qdrkmwAqDtoqApL8e8eDf/view" },
+    { name: "Sololearn Certificate C++", date: "07/09/2022", category: "Programming", link: "https://drive.google.com/file/d/1SoK8SwAnAVb20caWM2efKVnHLQkpmg7Y/view" },
+    { name: "Sololearn Certificate Python", date: "09/09/2022", category: "Programming", link: "https://drive.google.com/file/d/1kMis9CaiYv6yGn4pNgI9T1LzRts_4Rlz/view" },
+    { name: "Sololearn Certificate SQL", date: "09/09/2022", category: "Database", link: "https://drive.google.com/file/d/14QWA8u7xCuVnForRp4jx8bvzo2Ay1xYB/view" },
+    { name: "Get Connected", date: "09/07/2023", category: "Networking", link: "https://drive.google.com/file/d/1AsECt0FyHv4uIUhL1i_Bz27r-nvbY1f4/view" }
+  ];
 
 
   const skills = {
     programming: ["C++", "C", "C#", "Python", "Java"],
-    web: ["HTML5", "CSS3", "JavaScript", "PHP"],
+    web: ["HTML5", "CSS3", "JavaScript", "PHP", "Typescript", "React", "Next.js", "Vite", "JWT", "Figma"],
     database: ["SQL", "NoSQL"],
     tools: ["AutoCAD", "OrCAD Capture", "Autodesk Inventor", "Catia V5"],
     systems: ["Windows", "macOS", "Linux"],
@@ -74,7 +74,7 @@ export default function InteractiveCV() {
     { lang: "Franceză", level: "A1", percentage: 25 }
   ];
 
-  const drivingLicenses = ["AM", "A1", "A2", "B1", "B"];
+  const drivingLicenses = ["AM", "A1", "A2", "A", "B1", "B"];
 
   const sections = [
     { id: 'about', name: 'Despre Mine', icon: Users },
@@ -107,7 +107,7 @@ export default function InteractiveCV() {
         <span className="text-sm text-gray-500">{percentage}%</span>
       </div>
       <div className="w-full bg-gray-200 rounded-full h-2">
-        <div 
+        <div
           className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
           style={{ width: `${percentage}%` }}
         ></div>
@@ -132,14 +132,14 @@ export default function InteractiveCV() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="relative">
               <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-blue-600 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
-                <img 
-                  src="/images/profil.jpg" 
-                  alt="Profil" 
+                <img
+                  src="/images/profil.jpg"
+                  alt="Profil"
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>  
-            
+            </div>
+
             <div className="text-center md:text-left flex-1">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                 Andrei-Eduard Crăciun
@@ -168,19 +168,19 @@ export default function InteractiveCV() {
                 <Linkedin className="w-4 h-4" />
                 LinkedIn
               </a>
-              
+
 
               <a href="https://github.com/Edward03YT" className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black text-white px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-              <Github className="w-4 h-4" />
-              GitHub
+                <Github className="w-4 h-4" />
+                GitHub
               </a>
 
-  <a
-                href="https://drive.google.com/file/d/1WD0mjFAqqFQk4Mx9-k4UNb3kT0-J41oe/view?usp=drive_link" 
+              <a
+                href="https://drive.google.com/file/d/1WD0mjFAqqFQk4Mx9-k4UNb3kT0-J41oe/view?usp=drive_link"
                 download="CV_CraciunAndrei.pdf"
                 className="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 backdrop-blur-sm border border-white/30"
-                >
-              <Download className="w-4 h-4" />
+              >
+                <Download className="w-4 h-4" />
                 Download CV
               </a>
 
@@ -198,11 +198,10 @@ export default function InteractiveCV() {
                 <button
                   key={section.id}
                   onClick={() => setActiveSection(section.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 ${
-                    activeSection === section.id
-                      ? 'bg-gradient-to-r from-purple-500 to-blue-600 text-white shadow-lg'
-                      : 'text-gray-300 hover:text-white hover:bg-white/10'
-                  }`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 ${activeSection === section.id
+                    ? 'bg-gradient-to-r from-purple-500 to-blue-600 text-white shadow-lg'
+                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    }`}
                 >
                   <IconComponent className="w-4 h-4" />
                   {section.name}
@@ -214,7 +213,7 @@ export default function InteractiveCV() {
 
         {/* Content Sections */}
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20">
-          
+
           {/* About Section */}
           {activeSection === 'about' && (
             <div className="animate-fadeIn">
@@ -279,7 +278,9 @@ export default function InteractiveCV() {
               </h2>
               <div className="relative">
                 <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500"></div>
-                <div className="relative bg-white/10 p-6 rounded-xl border-l-4 border-purple-500 ml-12 hover:bg-white/15 transition-all duration-300">
+
+                {/* UPB */}
+                <div className="relative bg-white/10 p-6 rounded-xl border-l-4 border-purple-500 ml-12 hover:bg-white/15 transition-all duration-300 mb-6">
                   <div className="absolute -left-16 top-6 w-4 h-4 bg-purple-500 rounded-full border-4 border-slate-900"></div>
                   <div className="flex justify-between items-start mb-4">
                     <div>
@@ -295,14 +296,34 @@ export default function InteractiveCV() {
                     </div>
                   </div>
                   <p className="text-gray-300 leading-relaxed">
-                    Student la una dintre cele mai prestigioase universități tehnice din România, 
+                    Student la una dintre cele mai prestigioase universități tehnice din România,
                     dezvoltând competențe avansate în inginerie și tehnologie.
+                  </p>
+                </div>
+
+                {/* Practica FRDS */}
+                <div className="relative bg-white/10 p-6 rounded-xl border-l-4 border-blue-500 ml-12 hover:bg-white/15 transition-all duration-300">
+                  <div className="absolute -left-16 top-6 w-4 h-4 bg-blue-500 rounded-full border-4 border-slate-900"></div>
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-2">Practica - FRDS (Fondul Român de Dezvoltare Socială)</h3>
+                      <p className="text-blue-400 font-semibold">Internship / Practică</p>
+                      <p className="text-gray-300">www.frds.ro</p>
+                    </div>
+                    <div className="text-right">
+                      <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm font-semibold">
+                        06/2025 - 09/2025
+                      </span>
+                      <p className="text-gray-400 text-sm mt-1">România</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 leading-relaxed">
+                    Dezvoltare și programare aplicație web în cadrul echipei FRDS, acumulând experiență practică în domeniul IT și management de proiect.
                   </p>
                 </div>
               </div>
             </div>
           )}
-
           {/* Certificates Section */}
           {activeSection === 'certificates' && (
             <div className="animate-fadeIn">
@@ -312,12 +333,12 @@ export default function InteractiveCV() {
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {certificates.map((cert, index) => (
-                  <a 
-                      key={index}
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                       className="bg-white/10 p-4 rounded-xl border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-lg group block cursor-pointer"
+                  <a
+                    key={index}
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/10 p-4 rounded-xl border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-lg group block cursor-pointer"
                   >
                     <div className="flex justify-between items-start mb-3">
                       <CategoryBadge category={cert.category} />
@@ -483,7 +504,7 @@ export default function InteractiveCV() {
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {drivingLicenses.map((license, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="bg-white/10 p-6 rounded-xl border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 text-center group"
                   >
@@ -496,13 +517,6 @@ export default function InteractiveCV() {
                     </p>
                   </div>
                 ))}
-              </div>
-              <div className="mt-8 bg-white/10 p-6 rounded-xl border border-white/20">
-                <h3 className="text-lg font-semibold text-white mb-4">Informații Suplimentare</h3>
-                <p className="text-gray-300">
-                  Posedă permise de conducere pentru multiple categorii de vehicule, 
-                  demonstrând responsabilitate și competențe în conducerea atât a autovehiculelor cât și a motocicletelor.
-                </p>
               </div>
             </div>
           )}

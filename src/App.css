@@ -303,6 +303,18 @@
   }
 }
 
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+body.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+
+
 /* Focus styles pentru accesibilitate */
 button:focus,
 a:focus,
