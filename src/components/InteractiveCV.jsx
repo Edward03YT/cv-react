@@ -230,7 +230,7 @@ export default function InteractiveCV() {
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div className="bg-white/5 p-3 rounded-lg">
                       <strong className="text-purple-400">Vârstă:</strong>
-                      <div className="text-gray-300">21 ani</div>
+                      <div className="text-gray-300">22 ani</div>
                     </div>
                     <div className="bg-white/5 p-3 rounded-lg">
                       <strong className="text-purple-400">Cetățenie:</strong>
