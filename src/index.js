@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';                    // Stiluri de bază
-import './styles/animations.css';        // Animații
-import './styles/components.css';        // Componente
-import './styles/utilities.css';         // Clase utilitare
+import './index.css';                    
+import './styles/animations.css';        
+import './styles/components.css';        
+import './styles/utilities.css';         
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

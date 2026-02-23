@@ -1,8 +1,8 @@
-/* src/index.css - Stiluri globale de bază pentru React */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Reset și stiluri de bază */
+
 * {
   margin: 0;
   padding: 0;
@@ -24,12 +24,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* Containerul principal pentru React */
+
 #root {
   min-height: 100vh;
 }
 
-/* Stiluri pentru accesibilitate */
+
 .sr-only {
   position: absolute;
   left: -10000px;
@@ -38,13 +38,13 @@ code {
   overflow: hidden;
 }
 
-/* Focus styles pentru accesibilitate */
+
 *:focus {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 
-/* Smooth scroll behavior */
+
 html {
   scroll-behavior: smooth;
 }

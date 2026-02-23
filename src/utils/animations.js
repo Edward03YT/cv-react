@@ -1,10 +1,6 @@
-// src/utils/animations.js
 
-/**
- * Funcție pentru smooth scroll către un element
- * @param {string} elementId - ID-ul elementului țintă
- * @param {number} offset - Offset în pixeli (opțional)
- */
+
+
 export const smoothScrollTo = (elementId, offset = 0) => {
   const element = document.getElementById(elementId);
   if (element) {
@@ -18,12 +14,7 @@ export const smoothScrollTo = (elementId, offset = 0) => {
   }
 };
 
-/**
- * Funcție pentru a adăuga clase de animație cu delay
- * @param {HTMLElement} element - Elementul DOM
- * @param {string} animationClass - Clasa de animație
- * @param {number} delay - Delay în milisecunde
- */
+
 export const addAnimationWithDelay = (element, animationClass, delay = 0) => {
   setTimeout(() => {
     if (element) {
@@ -32,40 +23,26 @@ export const addAnimationWithDelay = (element, animationClass, delay = 0) => {
   }, delay);
 };
 
-/**
- * Funcție pentru animații staggered pe o listă de elemente
- * @param {NodeList} elements - Lista de elemente
- * @param {string} animationClass - Clasa de animație
- * @param {number} staggerDelay - Delay între animații
- */
+
 export const staggerAnimation = (elements, animationClass, staggerDelay = 100) => {
   elements.forEach((element, index) => {
     addAnimationWithDelay(element, animationClass, index * staggerDelay);
   });
 };
 
-/**
- * Funcție pentru a verifica dacă animațiile sunt preferate
- * @returns {boolean}
- */
+
 export const prefersReducedMotion = () => {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 };
 
-/**
- * Funcție pentru a aplica animații doar dacă sunt permise
- * @param {Function} animationFunction - Funcția de animație
- */
+
 export const safeAnimate = (animationFunction) => {
   if (!prefersReducedMotion()) {
     animationFunction();
   }
 };
 
-/**
- * Funcție pentru fade in pe scroll
- * @param {string} selector - Selectorul CSS pentru elemente
- */
+
 export const initScrollAnimations = (selector = '.fade-in-section') => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -82,12 +59,7 @@ export const initScrollAnimations = (selector = '.fade-in-section') => {
   return observer;
 };
 
-/**
- * Funcție pentru typing effect
- * @param {HTMLElement} element - Elementul țintă
- * @param {string} text - Textul de tastat
- * @param {number} speed - Viteza de tastare (ms)
- */
+
 export const typeWriter = (element, text, speed = 100) => {
   if (!element) return;
   
@@ -105,12 +77,7 @@ export const typeWriter = (element, text, speed = 100) => {
   type();
 };
 
-/**
- * Funcție pentru counter animation
- * @param {HTMLElement} element - Elementul ce conține numărul
- * @param {number} target - Numărul țintă
- * @param {number} duration - Durata animației (ms)
- */
+
 export const animateCounter = (element, target, duration = 2000) => {
   if (!element) return;
   
@@ -131,12 +98,7 @@ export const animateCounter = (element, target, duration = 2000) => {
   updateCounter();
 };
 
-/**
- * Funcție pentru progress bar animation
- * @param {HTMLElement} progressBar - Elementul progress bar
- * @param {number} percentage - Procentajul țintă
- * @param {number} duration - Durata animației (ms)
- */
+
 export const animateProgressBar = (progressBar, percentage, duration = 1000) => {
   if (!progressBar) return;
   
@@ -148,11 +110,7 @@ export const animateProgressBar = (progressBar, percentage, duration = 1000) => 
   }, 100);
 };
 
-/**
- * Funcție pentru reveal animation cu direction
- * @param {HTMLElement} element - Elementul de animat
- * @param {string} direction - Direcția ('left', 'right', 'up', 'down')
- */
+
 export const revealElement = (element, direction = 'up') => {
   if (!element) return;
   
@@ -166,11 +124,7 @@ export const revealElement = (element, direction = 'up') => {
   element.classList.add(animations[direction] || animations.up);
 };
 
-/**
- * Funcție pentru parallax effect
- * @param {string} selector - Selectorul pentru elementele parallax
- * @param {number} speed - Viteza parallax (0-1)
- */
+
 export const initParallx = (selector = '.parallax', speed = 0.5) => {
   const elements = document.querySelectorAll(selector);
   
@@ -187,11 +141,7 @@ export const initParallx = (selector = '.parallax', speed = 0.5) => {
   return () => window.removeEventListener('scroll', handleScroll);
 };
 
-/**
- * Funcție pentru mouse hover tilt effect
- * @param {HTMLElement} element - Elementul de aplicat efectul
- * @param {number} intensity - Intensitatea efectului (grad)
- */
+
 export const addTiltEffect = (element, intensity = 10) => {
   if (!element) return;
   
@@ -222,10 +172,7 @@ export const addTiltEffect = (element, intensity = 10) => {
   };
 };
 
-/**
- * Funcție pentru a reseta toate animațiile
- * @param {string} selector - Selectorul pentru elemente
- */
+
 export const resetAnimations = (selector = '[class*="animate-"]') => {
   document.querySelectorAll(selector).forEach(element => {
     const classList = Array.from(element.classList);
@@ -237,10 +184,7 @@ export const resetAnimations = (selector = '[class*="animate-"]') => {
   });
 };
 
-/**
- * Funcție pentru lazy loading cu animație
- * @param {string} selector - Selectorul pentru imagini
- */
+
 export const initLazyLoading = (selector = 'img[data-src]') => {
   const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {

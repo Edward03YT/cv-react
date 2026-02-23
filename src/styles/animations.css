@@ -1,6 +1,6 @@
-/* src/styles/animations.css - Animații și efecte vizuale */
 
-/* === KEYFRAME ANIMATIONS === */
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -161,7 +161,7 @@
   }
 }
 
-/* === ANIMATION CLASSES === */
+
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out forwards;
 }
@@ -215,7 +215,7 @@
   animation: gradient-shift 3s ease infinite;
 }
 
-/* === STAGGERED ANIMATIONS === */
+
 .stagger-children > * {
   opacity: 0;
   transform: translateY(20px);
@@ -245,7 +245,7 @@
   animation: slideInUp 0.6s ease-out 0.6s forwards;
 }
 
-/* === HOVER ANIMATIONS === */
+
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -287,7 +287,7 @@
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
 }
 
-/* === LOADING ANIMATIONS === */
+
 .loading-spinner {
   border: 3px solid #f3f4f6;
   border-top: 3px solid #3b82f6;
@@ -319,7 +319,7 @@
   }
 }
 
-/* === PAGE TRANSITIONS === */
+
 .page-enter {
   opacity: 0;
   transform: translateX(100px);
@@ -341,7 +341,7 @@
   transition: opacity 400ms, transform 400ms;
 }
 
-/* === INTERSECTION OBSERVER ANIMATIONS === */
+
 .fade-in-section {
   opacity: 0;
   transform: translateY(20px);
@@ -356,7 +356,7 @@
   visibility: visible;
 }
 
-/* === RESPONSIVE ANIMATIONS === */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

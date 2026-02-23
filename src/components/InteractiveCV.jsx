@@ -21,7 +21,10 @@ import {
   ChevronRight,
   Star,
   Zap,
-  Github
+  Github,
+  Briefcase,
+  ExternalLink,
+  Bike
 } from 'lucide-react';
 
 export default function InteractiveCV() {
@@ -78,6 +81,7 @@ export default function InteractiveCV() {
 
   const sections = [
     { id: 'about', name: 'Despre Mine', icon: Users },
+    { id: 'projects', name: 'Proiecte', icon: Briefcase },
     { id: 'education', name: 'Educație', icon: GraduationCap },
     { id: 'certificates', name: 'Certificate', icon: Award },
     { id: 'skills', name: 'Competențe', icon: Code },
@@ -117,7 +121,7 @@ export default function InteractiveCV() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      {/* Animated Background */}
+
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-10 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -127,7 +131,7 @@ export default function InteractiveCV() {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-8">
-        {/* Header Section */}
+
         <div className={`bg-white/10 backdrop-blur-lg rounded-3xl p-8 mb-8 shadow-2xl border border-white/20 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="relative">
@@ -189,7 +193,7 @@ export default function InteractiveCV() {
           </div>
         </div>
 
-        {/* Navigation */}
+
         <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 mb-8 shadow-xl border border-white/20">
           <div className="flex flex-wrap gap-2 justify-center">
             {sections.map((section) => {
@@ -211,10 +215,10 @@ export default function InteractiveCV() {
           </div>
         </div>
 
-        {/* Content Sections */}
+
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20">
 
-          {/* About Section */}
+
           {activeSection === 'about' && (
             <div className="animate-fadeIn">
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
@@ -269,7 +273,66 @@ export default function InteractiveCV() {
             </div>
           )}
 
-          {/* Education Section */}
+
+          {activeSection === 'projects' && (
+            <div className="animate-fadeIn">
+              <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                <Briefcase className="w-8 h-8 text-purple-400" />
+                Proiecte Web
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8">
+
+                <div className="bg-white/10 rounded-2xl border border-white/20 overflow-hidden hover:scale-105 transition-all duration-300 group flex flex-col">
+                  <div className="h-48 bg-gradient-to-br from-blue-500/30 to-purple-600/30 relative flex items-center justify-center p-6 border-b border-white/10">
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                    <Monitor className="w-16 h-16 text-white/80 z-10 group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                      Chestionare Auto
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-4 line-clamp-3">
+                      Platformă web interactivă pentru pregătirea în vederea obținerii permisului de conducere. Oferă utilizatorilor posibilitatea de a rezolva chestionare auto într-un mediu intuitiv.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-6 mt-auto">
+                      <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs border border-blue-500/30">React</span>
+                      <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs border border-blue-500/30">Web</span>
+                      <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs border border-blue-500/30">Educație</span>
+                    </div>
+                    <a href="https://chestionare-auto.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-2 rounded-xl transition-all duration-300 shadow-lg mt-auto">
+                      Vezi Proiectul <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+
+
+                <div className="bg-white/10 rounded-2xl border border-white/20 overflow-hidden hover:scale-105 transition-all duration-300 group flex flex-col">
+                  <div className="h-48 bg-gradient-to-br from-green-500/30 to-teal-600/30 relative flex items-center justify-center p-6 border-b border-white/10">
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                    <Database className="w-16 h-16 text-white/80 z-10 group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">
+                      Gestiune Școală Șoferi
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-4 line-clamp-3">
+                      Aplicație de management dedicată școlilor de șoferi. Permite administrarea eficientă a instructorilor, elevilor și programărilor, simplificând fluxul de lucru administrativ.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-6 mt-auto">
+                      <span className="bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full text-xs border border-teal-500/30">Management</span>
+                      <span className="bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full text-xs border border-teal-500/30">SaaS</span>
+                      <span className="bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full text-xs border border-teal-500/30">Dashboard</span>
+                    </div>
+                    <a href="https://gestiune-scoala-soferi.vercel.app/login" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white px-4 py-2 rounded-xl transition-all duration-300 shadow-lg mt-auto">
+                      Vezi Proiectul <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+
           {activeSection === 'education' && (
             <div className="animate-fadeIn">
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
@@ -279,7 +342,7 @@ export default function InteractiveCV() {
               <div className="relative">
                 <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500"></div>
 
-                {/* UPB */}
+
                 <div className="relative bg-white/10 p-6 rounded-xl border-l-4 border-purple-500 ml-12 hover:bg-white/15 transition-all duration-300 mb-6">
                   <div className="absolute -left-16 top-6 w-4 h-4 bg-purple-500 rounded-full border-4 border-slate-900"></div>
                   <div className="flex justify-between items-start mb-4">
@@ -301,7 +364,7 @@ export default function InteractiveCV() {
                   </p>
                 </div>
 
-                {/* Practica FRDS */}
+
                 <div className="relative bg-white/10 p-6 rounded-xl border-l-4 border-blue-500 ml-12 hover:bg-white/15 transition-all duration-300">
                   <div className="absolute -left-16 top-6 w-4 h-4 bg-blue-500 rounded-full border-4 border-slate-900"></div>
                   <div className="flex justify-between items-start mb-4">
@@ -324,7 +387,7 @@ export default function InteractiveCV() {
               </div>
             </div>
           )}
-          {/* Certificates Section */}
+
           {activeSection === 'certificates' && (
             <div className="animate-fadeIn">
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
@@ -357,7 +420,7 @@ export default function InteractiveCV() {
             </div>
           )}
 
-          {/* Skills Section */}
+
           {activeSection === 'skills' && (
             <div className="animate-fadeIn">
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
@@ -450,7 +513,7 @@ export default function InteractiveCV() {
             </div>
           )}
 
-          {/* Languages Section */}
+
           {activeSection === 'languages' && (
             <div className="animate-fadeIn">
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
@@ -495,7 +558,7 @@ export default function InteractiveCV() {
             </div>
           )}
 
-          {/* Licenses Section */}
+
           {activeSection === 'licenses' && (
             <div className="animate-fadeIn">
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
@@ -509,7 +572,11 @@ export default function InteractiveCV() {
                     className="bg-white/10 p-6 rounded-xl border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 text-center group"
                   >
                     <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <Car className="w-8 h-8 text-white" />
+                      {license.includes('A') ? (
+                        <Bike className="w-8 h-8 text-white" />
+                      ) : (
+                        <Car className="w-8 h-8 text-white" />
+                      )}
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">Categoria {license}</h3>
                     <p className="text-gray-300 text-sm">

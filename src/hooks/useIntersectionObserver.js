@@ -1,11 +1,7 @@
-// src/hooks/useIntersectionObserver.js
+
 import { useEffect, useRef, useState } from 'react';
 
-/**
- * Hook pentru detectarea când un element devine vizibil în viewport
- * @param {Object} options - Opțiuni pentru Intersection Observer
- * @returns {Array} - [ref, isVisible]
- */
+
 export const useIntersectionObserver = (options = {}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
@@ -17,7 +13,7 @@ export const useIntersectionObserver = (options = {}) => {
         const isIntersecting = entry.isIntersecting;
         setIsVisible(isIntersecting);
         
-        // O dată ce a fost vizibil, rămâne marcat
+        
         if (isIntersecting && !hasBeenVisible) {
           setHasBeenVisible(true);
         }
@@ -44,12 +40,7 @@ export const useIntersectionObserver = (options = {}) => {
   return [elementRef, isVisible, hasBeenVisible];
 };
 
-/**
- * Hook pentru animații staggered (întârziate)
- * @param {number} itemCount - Numărul de elemente
- * @param {number} delay - Întârzierea între animații (ms)
- * @returns {Array} - [ref, visibleItems]
- */
+
 export const useStaggeredAnimation = (itemCount, delay = 100) => {
   const [visibleItems, setVisibleItems] = useState(new Set());
   const [ref, isVisible] = useIntersectionObserver();
@@ -67,10 +58,7 @@ export const useStaggeredAnimation = (itemCount, delay = 100) => {
   return [ref, visibleItems];
 };
 
-/**
- * Hook pentru scroll progress
- * @returns {number} - Progresul scroll-ului (0-100)
- */
+
 export const useScrollProgress = () => {
   const [progress, setProgress] = useState(0);
 
@@ -88,10 +76,7 @@ export const useScrollProgress = () => {
   return progress;
 };
 
-/**
- * Hook pentru detectarea scroll direction
- * @returns {string} - 'up' sau 'down'
- */
+
 export const useScrollDirection = () => {
   const [scrollDirection, setScrollDirection] = useState('down');
   const [lastScrollY, setLastScrollY] = useState(0);
