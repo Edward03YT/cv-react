@@ -190,3 +190,7 @@ Andrei-Eduard Crăciun
 
 ⭐ Dacă îți place proiectul, nu uita să dai o stea pe GitHub!
 Construit cu ❤️ de Andrei-Eduard Crăciun
+
+
+
+De bagat update la portofoliu cu chestionare si gestiune.
