@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useIntersectionObserver, useScrollProgress } from '../hooks/useIntersectionObserver';
-import { smoothScrollTo, animateProgressBar } from '../utils/animations';
 
 import {
   Mail,
@@ -16,11 +14,9 @@ import {
   Users,
   Calendar,
   MapPin,
-  Phone,
   Download,
   ChevronRight,
   Star,
-  Zap,
   Github,
   Briefcase,
   ExternalLink,
@@ -120,7 +116,7 @@ export default function InteractiveCV() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
 
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-10 opacity-20">
@@ -130,16 +126,18 @@ export default function InteractiveCV() {
         </div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-8">
+      <div className="relative z-10 container max-w-6xl mx-auto px-4 py-8 md:py-12">
 
-        <div className={`bg-white/10 backdrop-blur-lg rounded-3xl p-8 mb-8 shadow-2xl border border-white/20 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="relative">
-              <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-blue-600 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
+        <header className={`bg-white/10 backdrop-blur-xl rounded-3xl p-8 lg:p-10 mb-10 shadow-[0_8px_32px_0_rgba(31,38,135,0.2)] border border-white/20 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="relative group">
+              <div className="w-36 h-36 md:w-40 md:h-40 bg-gradient-to-br from-purple-400 to-blue-600 rounded-full flex items-center justify-center overflow-hidden shadow-xl transform group-hover:scale-105 transition-all duration-500 border-4 border-white/10">
                 <img
                   src="/images/profil.jpg"
-                  alt="Profil"
+                  alt="Fotografie de profil Andrei-Eduard Crăciun"
                   className="w-full h-full object-cover"
+                  fetchpriority="high"
+                  loading="eager"
                 />
               </div>
             </div>
@@ -167,34 +165,42 @@ export default function InteractiveCV() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-3">
-              <a href="https://www.linkedin.com/in/craciun-andrei-eduard-379334269/" className="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                <Linkedin className="w-4 h-4" />
-                LinkedIn
+            <div className="flex flex-col gap-3 w-full md:w-auto mt-4 md:mt-0">
+              <a href="https://www.linkedin.com/in/craciun-andrei-eduard-379334269/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Profilul meu de LinkedIn"
+                className="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-6 py-3 rounded-full flex items-center justify-center md:justify-start gap-2 transition-all duration-300 shadow-lg hover:shadow-purple-500/30 transform hover:-translate-y-1">
+                <Linkedin className="w-5 h-5" />
+                <span>LinkedIn</span>
               </a>
 
 
-              <a href="https://github.com/Edward03YT" className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black text-white px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                <Github className="w-4 h-4" />
-                GitHub
+              <a href="https://github.com/Edward03YT"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Profilul meu de GitHub"
+                className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black text-white px-6 py-3 rounded-full flex items-center justify-center md:justify-start gap-2 transition-all duration-300 shadow-lg hover:shadow-gray-700/30 transform hover:-translate-y-1">
+                <Github className="w-5 h-5" />
+                <span>GitHub</span>
               </a>
 
               <a
                 href="https://drive.google.com/file/d/1WD0mjFAqqFQk4Mx9-k4UNb3kT0-J41oe/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
                 download="CV_CraciunAndrei.pdf"
-                className="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 backdrop-blur-sm border border-white/30"
+                className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full flex items-center justify-center md:justify-start gap-2 transition-all duration-300 backdrop-blur-sm border border-white/30 hover:shadow-lg transform hover:-translate-y-1"
               >
-                <Download className="w-4 h-4" />
-                Download CV
+                <Download className="w-5 h-5" />
+                <span>Download CV</span>
               </a>
-
 
             </div>
           </div>
-        </div>
+        </header>
 
-
-        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 mb-8 shadow-xl border border-white/20">
+        <nav aria-label="Meniul de navigare" className="bg-white/10 backdrop-blur-xl rounded-2xl p-2 mb-10 shadow-xl border border-white/20 sticky top-4 z-50">
           <div className="flex flex-wrap gap-2 justify-center">
             {sections.map((section) => {
               const IconComponent = section.icon;
@@ -213,10 +219,10 @@ export default function InteractiveCV() {
               );
             })}
           </div>
-        </div>
+        </nav>
 
 
-        <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20">
+        <section aria-live="polite" className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 lg:p-10 shadow-[0_8px_32px_0_rgba(31,38,135,0.2)] border border-white/20 min-h-[400px]">
 
 
           {activeSection === 'about' && (
@@ -587,7 +593,7 @@ export default function InteractiveCV() {
               </div>
             </div>
           )}
-        </div>
+        </section>
       </div>
 
       <style jsx>{`
@@ -605,6 +611,6 @@ export default function InteractiveCV() {
           animation-delay: 4s;
         }
       `}</style>
-    </div>
+    </main>
   );
 }
